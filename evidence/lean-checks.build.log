@@ -1,0 +1,598 @@
+✔ [3824/4000] Built SketchOrientation.GaussianMatrixSpace (5.5s)
+✔ [3825/4000] Built SketchOrientation.CosineWindow (6.4s)
+✔ [3826/4000] Built SketchOrientation.Arithmetic (5.9s)
+✔ [3827/4000] Built TypicalOrientations.BCLMHeatPositivity (6.8s)
+✔ [3828/4000] Built SketchOrientation.EdgeWalsh (8.4s)
+✔ [3829/4000] Built SketchOrientation.GaussianGramAlgebra (8.8s)
+✔ [3830/4000] Built SketchOrientation.SignBlockLimit (8.7s)
+✔ [3831/4000] Built SketchOrientation.GaussianProductConditional (8.7s)
+✔ [3832/4000] Built SketchOrientation.GaussianMixedExpectationConvergence (8.4s)
+✔ [3833/4000] Built SketchOrientation.Geometry (8.9s)
+✔ [3834/4000] Built TypicalOrientations.BCLMHeatComparison (8.3s)
+✔ [3835/4000] Built TypicalOrientations.EmpiricalJensen (8.2s)
+✔ [3836/4000] Built SketchOrientation.GaussianChaosSchur (9.1s)
+✔ [3837/4000] Built SketchOrientation.StandardGaussianMoments (8.8s)
+✔ [3838/4000] Built TypicalOrientations.BCLMSpectralHeat (8.5s)
+✔ [3839/4000] Built TypicalOrientations.CumulantComparison (8.3s)
+✔ [3840/4000] Built SketchOrientation.GammaMoments (9.3s)
+✔ [3841/4000] Built SketchOrientation.TwoLevelAlgebra (9.3s)
+✔ [3842/4000] Built TypicalOrientations.BCLMGradientGeometry (8.7s)
+✔ [3843/4000] Built SketchOrientation.FlatVector (9.5s)
+✔ [3844/4000] Built SketchOrientation.EdgeCap (9.0s)
+✔ [3845/4000] Built SketchOrientation.SpectralContinuity (9.0s)
+✔ [3846/4000] Built SketchOrientation.Dct (4.0s)
+⚠ [3847/4000] Built SketchOrientation.WalshSampling (5.2s)
+warning: SketchOrientation/WalshSampling.lean:100:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshSampling.lean:145:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: SketchOrientation/WalshSampling.lean:202:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshSampling.lean:203:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: SketchOrientation/WalshSampling.lean:285:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3848/4000] Built SketchOrientation.WalshStirling (5.5s)
+✔ [3849/4000] Built SketchOrientation.GaussianChaosKernel (4.9s)
+✔ [3850/4000] Built SketchOrientation.GaussianChiSquareMeans (5.1s)
+✔ [3851/4000] Built SketchOrientation.Atom (5.1s)
+✔ [3852/4000] Built SketchOrientation.SpectralGram (4.0s)
+✔ [3853/4000] Built SketchOrientation.GaussianRadial (6.0s)
+✔ [3854/4000] Built SketchOrientation.CosineSpread (4.8s)
+✔ [3855/4000] Built SketchOrientation.DctSampling (4.6s)
+⚠ [3856/4000] Built SketchOrientation.WalshSignedPerm (4.6s)
+warning: SketchOrientation/WalshSignedPerm.lean:60:39: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3857/4000] Built SketchOrientation.WalshCoupling (4.8s)
+warning: SketchOrientation/WalshCoupling.lean:207:21: This simp argument is unused:
+  IndependentDraw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [μ, ν, independentTable, uniformMean_prod']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3858/4000] Built SketchOrientation.GaussianBetaRatio (5.4s)
+✔ [3859/4000] Built SketchOrientation.CosineCovariance (4.4s)
+✔ [3860/4000] Built SketchOrientation.SpectralCap (5.3s)
+✔ [3861/4000] Built SketchOrientation.GaussianChaosSplit (5.9s)
+✔ [3862/4000] Built SketchOrientation.GaussianGramLaw (6.4s)
+⚠ [3863/4000] Built SketchOrientation.PermutationVariance (4.7s)
+warning: SketchOrientation/PermutationVariance.lean:13:55: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3864/4000] Built SketchOrientation.WalshFrame (4.7s)
+warning: SketchOrientation/WalshFrame.lean:101:10: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hij, mt hv.mp hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3865/4000] Built SketchOrientation.WalshMiss (5.4s)
+warning: SketchOrientation/WalshMiss.lean:96:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshMiss.lean:97:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3866/4000] Built SketchOrientation.CosineReflection (5.3s)
+✔ [3867/4000] Built SketchOrientation.Residual (25s)
+✔ [3868/4000] Built SketchOrientation.GaussianBetaMoments (5.0s)
+✔ [3869/4000] Built SketchOrientation.GaussianChaosAverage (6.5s)
+✔ [3870/4000] Built SketchOrientation.GaussianInput (6.1s)
+✔ [3871/4000] Built SketchOrientation.GaussianGramMoments (6.2s)
+⚠ [3872/4000] Built SketchOrientation.PermutationAbsoluteMean (5.3s)
+warning: SketchOrientation/PermutationAbsoluteMean.lean:38:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/PermutationAbsoluteMean.lean:39:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/PermutationAbsoluteMean.lean:34:13: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SketchOrientation/PermutationAbsoluteMean.lean:76:50: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3873/4000] Built SketchOrientation.GaussianChaosExponential (7.0s)
+✔ [3874/4000] Built SketchOrientation.GaussianPolarAlgebra (6.6s)
+✔ [3875/4000] Built SketchOrientation.GaussianOrthogonal (6.8s)
+⚠ [3876/4000] Built SketchOrientation.WalshGap (6.0s)
+warning: SketchOrientation/WalshGap.lean:115:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGap.lean:116:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3877/4000] Built SketchOrientation.PairedDct (4.9s)
+⚠ [3878/4000] Built SketchOrientation.WalshSmallBall (7.2s)
+warning: SketchOrientation/WalshSmallBall.lean:160:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshSmallBall.lean:161:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3879/4000] Built SketchOrientation.GramResidual (7.1s)
+✔ [3880/4000] Built SketchOrientation.SpectralCapGaussian (5.9s)
+✔ [3881/4000] Built SketchOrientation.GaussianGramTracePowers (6.1s)
+✔ [3882/4000] Built SketchOrientation.GaussianGramMean (6.1s)
+✔ [3883/4000] Built SketchOrientation.GaussianChaosDensity (6.3s)
+✔ [3884/4000] Built SketchOrientation.GaussianPolarLaw (6.3s)
+✔ [3885/4000] Built SketchOrientation.DctSketchLaw (5.3s)
+⚠ [3886/4000] Built SketchOrientation.WalshGaussian (6.5s)
+warning: SketchOrientation/WalshGaussian.lean:67:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGaussian.lean:172:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGaussian.lean:222:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGaussian.lean:223:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGaussian.lean:264:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshGaussian.lean:265:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3887/4000] Built SketchOrientation.TwoLevelTail (5.5s)
+⚠ [3888/4000] Built SketchOrientation.DctSampleCovariance (5.9s)
+warning: SketchOrientation/DctSampleCovariance.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3889/4000] Built SketchOrientation.ProjectorFrame (6.2s)
+⚠ [3890/4000] Built SketchOrientation.GaussianGramPairAlgebra (6.6s)
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:33:6: `Matrix.toEuclideanLin_apply` has been deprecated: Use `Matrix.toLpLin_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {m : Type u_1} {n : Type u_2} {R : Type u_4} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : CommRing R]
+    (p q : ENNReal) (M : Matrix m n R) (v : WithLp p (n → R)), ((toLpLin p q) M) v = WithLp.toLp q (M *ᵥ v.ofLp)
+instead of
+  ∀ {𝕜 : Type u_3} [inst : RCLike 𝕜] {m : Type u_7} {n : Type u_8} [inst_1 : Fintype n] [inst_2 : DecidableEq n]
+    (M : Matrix m n 𝕜) (v : EuclideanSpace 𝕜 n), (toEuclideanLin M) v = WithLp.toLp 2 (M *ᵥ v.ofLp)
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:37:10: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
+    (PiLp.single p i a).ofLp j = if j = i then a else 0
+instead of
+  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
+    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:37:10: This simp argument is unused:
+  EuclideanSpace.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:94:6: `Matrix.toEuclideanLin_apply` has been deprecated: Use `Matrix.toLpLin_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {m : Type u_1} {n : Type u_2} {R : Type u_4} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : CommRing R]
+    (p q : ENNReal) (M : Matrix m n R) (v : WithLp p (n → R)), ((toLpLin p q) M) v = WithLp.toLp q (M *ᵥ v.ofLp)
+instead of
+  ∀ {𝕜 : Type u_3} [inst : RCLike 𝕜] {m : Type u_7} {n : Type u_8} [inst_1 : Fintype n] [inst_2 : DecidableEq n]
+    (M : Matrix m n 𝕜) (v : EuclideanSpace 𝕜 n), (toEuclideanLin M) v = WithLp.toLp 2 (M *ᵥ v.ofLp)
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:95:4: `Matrix.toEuclideanLin_apply` has been deprecated: Use `Matrix.toLpLin_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {m : Type u_1} {n : Type u_2} {R : Type u_4} [inst : Fintype n] [inst_1 : DecidableEq n] [inst_2 : CommRing R]
+    (p q : ENNReal) (M : Matrix m n R) (v : WithLp p (n → R)), ((toLpLin p q) M) v = WithLp.toLp q (M *ᵥ v.ofLp)
+instead of
+  ∀ {𝕜 : Type u_3} [inst : RCLike 𝕜] {m : Type u_7} {n : Type u_8} [inst_1 : Fintype n] [inst_2 : DecidableEq n]
+    (M : Matrix m n 𝕜) (v : EuclideanSpace 𝕜 n), (toEuclideanLin M) v = WithLp.toLp 2 (M *ᵥ v.ofLp)
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:128:23: Try `simp at hPos` instead of `simpa using hPos`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:138:37: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
+    (PiLp.single p i a).ofLp j = if j = i then a else 0
+instead of
+  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
+    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:145:37: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
+    (PiLp.single p i a).ofLp j = if j = i then a else 0
+instead of
+  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
+    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
+warning: SketchOrientation/GaussianGramPairAlgebra.lean:150:68: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
+    (PiLp.single p i a).ofLp j = if j = i then a else 0
+instead of
+  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
+    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
+⚠ [3891/4000] Built SketchOrientation.CosineGaussianRidge (6.5s)
+warning: SketchOrientation/CosineGaussianRidge.lean:67:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3892/4000] Built TypicalOrientations.GaussianMomentRows (6.6s)
+✔ [3893/4000] Built SketchOrientation.GaussianPolarTrace (6.1s)
+✔ [3894/4000] Built SketchOrientation.GaussianChaosProjection (6.7s)
+ℹ [3895/4000] Built SketchOrientation.RandomSignBlockLimit (6.5s)
+info: SketchOrientation/RandomSignBlockLimit.lean:42:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [3896/4000] Built SketchOrientation.WalshPositiveLoss (6.0s)
+warning: SketchOrientation/WalshPositiveLoss.lean:114:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:115:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:194:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:200:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:201:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:404:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:405:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/WalshPositiveLoss.lean:351:70: This simp argument is unused:
+  max_le_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [X, ht₀]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3897/4000] Built SketchOrientation.SpectrumResidual (5.4s)
+✔ [3898/4000] Built SketchOrientation.TwoLevelResidual (5.5s)
+✔ [3899/4000] Built SketchOrientation.GaussianProjectedGram (6.0s)
+✔ [3900/4000] Built SketchOrientation.GaussianChaosContraction (6.7s)
+✔ [3901/4000] Built SketchOrientation.GaussianVectorization (6.1s)
+✔ [3902/4000] Built SketchOrientation.SpectrumSingular (5.6s)
+⚠ [3903/4000] Built SketchOrientation.UnequalSpikes (5.7s)
+warning: SketchOrientation/UnequalSpikes.lean:13:8: automatically included section variable(s) unused in theorem `_private.SketchOrientation.UnequalSpikes.0.SketchOrientation.trace_conjugation_mono`:
+  [DecidableEq n]
+  [DecidableEq l]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] [DecidableEq l] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: SketchOrientation/UnequalSpikes.lean:20:8: automatically included section variable(s) unused in theorem `_private.SketchOrientation.UnequalSpikes.0.SketchOrientation.squaredFrobenius_mul_eq_conjugate`:
+  [DecidableEq m]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq m] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3904/4000] Built SketchOrientation.BlockLoss (6.4s)
+✔ [3905/4000] Built SketchOrientation.WalshRSVD (6.9s)
+✔ [3906/4000] Built SketchOrientation.GaussianPolarConditional (6.5s)
+✔ [3907/4000] Built SketchOrientation.AtomTheorem (8.2s)
+✔ [3908/4000] Built SketchOrientation.GaussianHaarColumn (7.3s)
+✔ [3909/4000] Built TypicalOrientations.GaussianMomentDeterministic (5.3s)
+✔ [3910/4000] Built SketchOrientation.GaussianChaosRows (7.3s)
+✔ [3911/4000] Built SketchOrientation.GaussianTailGram (6.7s)
+✔ [3912/4000] Built SketchOrientation.CosineWindowLimits (6.2s)
+⚠ [3913/4000] Built SketchOrientation.DctBlockCoefficients (6.4s)
+warning: SketchOrientation/DctBlockCoefficients.lean:51:64: This simp argument is unused:
+  PiLp.toLp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [scaledTargetBlock, Matrix.smul_apply, smul_eq_mul, signedCoefficientSum, WithLp.ofLp_sum,
+    Finset.sum_apply, PiLp.smul_apply, dctBlockCoefficient]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3914/4000] Built SketchOrientation.GaussianOrientationGapAlgebra (5.7s)
+✔ [3915/4000] Built TypicalOrientations.WalshRareMiss (7.0s)
+✔ [3916/4000] Built TypicalOrientations.SpikeResidual (6.2s)
+✔ [3917/4000] Built SketchOrientation.GaussianHaarColumnSchur (7.1s)
+✔ [3918/4000] Built TypicalOrientations.GaussianMomentProduct (6.2s)
+✔ [3919/4000] Built SketchOrientation.GaussianChaosVariance (6.7s)
+⚠ [3920/4000] Built SketchOrientation.DctBlockLimit (6.1s)
+warning: SketchOrientation/DctBlockLimit.lean:123:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/DctBlockLimit.lean:157:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: SketchOrientation/DctBlockLimit.lean:177:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3921/4000] Built SketchOrientation.GaussianHaarQuadratic (6.3s)
+✔ [3922/4000] Built SketchOrientation.GaussianSphereBeta (7.3s)
+✔ [3923/4000] Built TypicalOrientations.GaussianMomentReindex (5.0s)
+✔ [3924/4000] Built SketchOrientation.GaussianOrientationTruncation (6.3s)
+⚠ [3925/4000] Built SketchOrientation.CosineWindowAssemble (6.5s)
+warning: SketchOrientation/CosineWindowAssemble.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [3926/4000] Built SketchOrientation.GaussianSphereIsotropy (6.1s)
+⚠ [3927/4000] Built SketchOrientation.GaussianGramPairMoments (6.9s)
+warning: SketchOrientation/GaussianGramPairMoments.lean:273:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SketchOrientation/GaussianGramPairMoments.lean:284:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SketchOrientation/GaussianGramPairMoments.lean:302:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SketchOrientation/GaussianGramPairMoments.lean:330:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: SketchOrientation/GaussianGramPairMoments.lean:391:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3928/4000] Built TypicalOrientations.Truncation (6.1s)
+✔ [3929/4000] Built SketchOrientation.GaussianOrientationScore (6.0s)
+✔ [3930/4000] Built SketchOrientation.GaussianSphereWeighted (5.8s)
+✔ [3931/4000] Built SketchOrientation.GaussianLiftEnergyCovarianceRadial (6.4s)
+✔ [3932/4000] Built SketchOrientation.GaussianHaarDirectionBeta (6.4s)
+✔ [3933/4000] Built SketchOrientation.GaussianOrientationEndpoint (5.9s)
+✔ [3934/4000] Built SketchOrientation.GaussianLiftEnergyCovarianceBlocks (6.3s)
+✔ [3935/4000] Built SketchOrientation.GaussianSphereConditionalQuadratic (7.8s)
+✔ [3936/4000] Built SketchOrientation.GaussianOrientationHaarMoments (5.0s)
+✔ [3937/4000] Built SketchOrientation.GaussianLiftEnergyBridge (9.4s)
+✔ [3938/4000] Built SketchOrientation.GaussianLiftEnergyCovariance (6.5s)
+✔ [3939/4000] Built SketchOrientation.GaussianOrientationGap (5.9s)
+✔ [3940/4000] Built SketchOrientation.AtomWorstCase (5.8s)
+✔ [3941/4000] Built SketchOrientation.GaussianOrientationRate (6.2s)
+✔ [3942/4000] Built TypicalOrientations.WalshAppendix (6.1s)
+✔ [3943/4000] Built SketchOrientation.GaussianOrientationNorm (6.5s)
+✔ [3944/4000] Built SketchOrientation.CosineWindowHaar (6.0s)
+✔ [3945/4000] Built SketchOrientation.ProjectorOverlap (6.7s)
+✔ [3946/4000] Built SketchOrientation.GaussianOrientationConvergence (6.8s)
+✔ [3947/4000] Built SketchOrientation.GaussianOrientationConverseMoments (7.1s)
+✔ [3948/4000] Built TypicalOrientations.SpikeCovariance (7.7s)
+✔ [3949/4000] Built SketchOrientation.GaussianLiftStabilizer (5.0s)
+✔ [3950/4000] Built SketchOrientation.GaussianOrientationGapConvergence (6.2s)
+✔ [3951/4000] Built TypicalOrientations.SpikeVariance (6.5s)
+✔ [3952/4000] Built SketchOrientation.GaussianLiftHaarMoment (5.8s)
+✔ [3953/4000] Built SketchOrientation.GaussianLiftHaarCovariance (6.0s)
+✔ [3954/4000] Built SketchOrientation.GaussianOrientationCovariance (6.6s)
+✔ [3955/4000] Built SketchOrientation.GaussianOrientationConverse (6.4s)
+✔ [3956/4000] Built SketchOrientation.GaussianOrientationTheorem (6.2s)
+✔ [3957/4000] Built SketchOrientation.UnequalSpikesHaar (6.7s)
+✔ [3958/4000] Built SketchOrientation.CoordinateOrientationExample (6.9s)
+✔ [3959/4000] Built TypicalOrientations.RotationModel (6.4s)
+✔ [3960/4000] Built TypicalOrientations.SpikeLimit (6.8s)
+✔ [3961/4000] Built TypicalOrientations.SamplingGeometry (6.8s)
+✔ [3962/4000] Built TypicalOrientations.GaussianMoment (6.5s)
+✔ [3963/4000] Built TypicalOrientations.RotationProduct (6.7s)
+✔ [3964/4000] Built TypicalOrientations.CommonMean (6.6s)
+✔ [3965/4000] Built TypicalOrientations.SpikeBridge (7.6s)
+✔ [3966/4000] Built TypicalOrientations.EmpiricalProjector (7.6s)
+✔ [3967/4000] Built TypicalOrientations.BenchmarkBound (6.2s)
+✔ [3968/4000] Built TypicalOrientations.SOCompact (6.6s)
+✔ [3969/4000] Built TypicalOrientations.BCLMDirections (6.8s)
+✔ [3970/4000] Built TypicalOrientations.LieProjection (6.8s)
+✔ [3971/4000] Built TypicalOrientations.FiniteRotationVariance (7.0s)
+✔ [3972/4000] Built TypicalOrientations.BCLMPolynomial (7.1s)
+✔ [3973/4000] Built TypicalOrientations.ReflectionTransfer (7.2s)
+✔ [3974/4000] Built TypicalOrientations.RotationMarginal (7.6s)
+✔ [3975/4000] Built TypicalOrientations.SpikeQuantitative (6.0s)
+✔ [3976/4000] Built TypicalOrientations.RankDeficiency (7.1s)
+✔ [3977/4000] Built TypicalOrientations.SOGenerate (6.8s)
+✔ [3978/4000] Built TypicalOrientations.BCLMPolySpace (6.4s)
+✔ [3979/4000] Built TypicalOrientations.ConditionalUpperBound (6.2s)
+✔ [3980/4000] Built TypicalOrientations.GeneralRotationVariance (6.6s)
+✔ [3981/4000] Built TypicalOrientations.RootRate (6.4s)
+✔ [3982/4000] Built TypicalOrientations.BCLMApproximation (7.5s)
+✔ [3983/4000] Built TypicalOrientations.BCLMSkewSpace (8.7s)
+✔ [3984/4000] Built TypicalOrientations.ConditionalCriterion (5.7s)
+✔ [3985/4000] Built TypicalOrientations.GaussianWorstCase (6.5s)
+✔ [3986/4000] Built TypicalOrientations.BCLMPolyEnergy (6.3s)
+✔ [3987/4000] Built TypicalOrientations.CriterionPort (5.5s)
+⚠ [3988/4000] Built TypicalOrientations.BCLMTranslation (5.7s)
+warning: TypicalOrientations/BCLMTranslation.lean:83:27: This simp argument is unused:
+  Matrix.mul_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [transpose_mul, hL, Matrix.neg_mul, Matrix.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TypicalOrientations/BCLMTranslation.lean:83:43: This simp argument is unused:
+  Matrix.neg_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [transpose_mul, hL, Matrix.mul_neg, Matrix.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TypicalOrientations/BCLMTranslation.lean:116:52: This simp argument is unused:
+  hK
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [onSOtranslation_apply, mul_assoc, K, soExponential_mul_eq_conjugate]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3989/4000] Built TypicalOrientations.BCLMCasimir (8.1s)
+✔ [3990/4000] Built TypicalOrientations.BCLMHeatFlow (6.6s)
+✔ [3991/4000] Built TypicalOrientations.BCLMTheorem (6.1s)
+✔ [3992/4000] Built TypicalOrientations.PaperTheorems (5.5s)
+✔ [3993/4000] Built TypicalOrientations.PaperConsequences (6.1s)
+✔ [3994/4000] Built TypicalOrientations.WalshHaarAgreement (6.3s)
+✔ [3995/4000] Built TypicalOrientations.CoordinateProjectionExample (6.5s)
+✔ [3996/4000] Built TypicalOrientations.RotationallyInvariantBenchmark (6.9s)
+✔ [3997/4000] Built TypicalOrientations.IllustrationIdentities (6.6s)
+✔ [3998/4000] Built TypicalOrientations.IntroCoordinateExample (6.1s)
+✔ [3999/4000] Built TypicalOrientations (5.3s)
+Build completed successfully (4000 jobs).

@@ -1,0 +1,438 @@
+TypicalOrientations.theorem_1_1 {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (n : ℕ → ℕ)
+  (hn : Filter.Tendsto n Filter.atTop Filter.atTop) (hℓn : ∀ (i : ℕ), k + p ≤ n i)
+  (μ : (i : ℕ) → MeasureTheory.Measure (SketchOrientation.OrthogonalProjector (n i) (k + p)))
+  [∀ (i : ℕ), MeasureTheory.IsProbabilityMeasure (μ i)] :
+  (Filter.Tendsto (fun i => TypicalOrientations.meanProjectorNorm (μ i)) Filter.atTop (nhds 0) ↔
+      Filter.Tendsto (fun i => TypicalOrientations.meanDiscrepancy k (μ i)) Filter.atTop (nhds 0)) ∧
+    (∀ (i : ℕ) (r : ℝ),
+        1 < r →
+          r ≤ 2 →
+            2 * r < ↑p + 1 →
+              TypicalOrientations.meanDiscrepancy k (μ i) ≤
+                3 * TypicalOrientations.gaussianTailMomentConstant k p r *
+                  (2 * TypicalOrientations.meanProjectorNorm (μ i)) ^ (1 - 1 / r)) ∧
+      (4 ≤ p →
+        ∀ (i : ℕ),
+          TypicalOrientations.meanDiscrepancy k (μ i) ≤
+            TypicalOrientations.gaussianTailMomentConstant k p 2 * √(2 * TypicalOrientations.meanProjectorNorm (μ i)))
+TypicalOrientations.lemma_3_1 {n l : ℕ} (hl' : 0 < l) (hl : l ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n l)) [MeasureTheory.IsProbabilityMeasure μ] :
+  TypicalOrientations.SharedRotationVariance hl μ
+TypicalOrientations.lemma_3_2 {n k p : ℕ} (hk : 0 < k) (hl : k + p ≤ n) (σ : TypicalOrientations.Spectra n k) {r : ℝ}
+  (hr : 1 < r) (hr2 : r ≤ 2) (hp : 2 * r < ↑p + 1) :
+  MeasureTheory.MemLp (TypicalOrientations.subspaceLoss k ↑σ) (ENNReal.ofReal r)
+      (TypicalOrientations.haarSketchProjectorLaw hl) ∧
+    MeasureTheory.lpNorm (TypicalOrientations.subspaceLoss k ↑σ) (ENNReal.ofReal r)
+        (TypicalOrientations.haarSketchProjectorLaw hl) ≤
+      TypicalOrientations.gaussianTailMomentConstant k p r
+TypicalOrientations.corollary_4_1 {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (n : ℕ → ℕ)
+  (hn : Filter.Tendsto n Filter.atTop Filter.atTop) (hd : ∀ (i : ℕ), k + p ≤ n i)
+  (J :
+    (i : ℕ) →
+      MeasureTheory.Measure
+        (TypicalOrientations.OrthogonalTransform (n i) × SketchOrientation.CoordinateSubset (n i) (k + p)))
+  [∀ (i : ℕ), MeasureTheory.IsProbabilityMeasure (J i)]
+  (hIncl : ∀ (i : ℕ), TypicalOrientations.equalConditionalRowInclusion ⋯ (J i)) :
+  (∀ (i : ℕ),
+      SketchOrientation.meanSketchProjector (TypicalOrientations.rowSketchLaw (J i)) = (↑(k + p) / ↑(n i)) • 1) ∧
+    Filter.Tendsto (fun i => TypicalOrientations.meanDiscrepancy k (TypicalOrientations.rowSketchLaw (J i)))
+        Filter.atTop (nhds 0) ∧
+      (4 ≤ p →
+        ∀ (i : ℕ),
+          TypicalOrientations.meanDiscrepancy k (TypicalOrientations.rowSketchLaw (J i)) ≤
+            TypicalOrientations.gaussianTailMomentConstant k p 2 * √(2 * (↑(k + p) / ↑(n i))))
+TypicalOrientations.corollary_4_2 {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (n : ℕ → ℕ)
+  (hn : Filter.Tendsto n Filter.atTop Filter.atTop) (hd : ∀ (i : ℕ), k + p ≤ n i)
+  (ν : (i : ℕ) → MeasureTheory.Measure (Matrix (Fin (n i)) (Fin (k + p)) ℝ))
+  [∀ (i : ℕ), MeasureTheory.IsProbabilityMeasure (ν i)]
+  (hRank : ∀ (i : ℕ), ∀ᵐ (Y : Matrix (Fin (n i)) (Fin (k + p)) ℝ) ∂ν i, Function.Injective Y.mulVec)
+  (hSign :
+    ∀ (i : ℕ) (s : Fin (n i) → ℝ),
+      (∀ (j : Fin (n i)), s j = 1 ∨ s j = -1) →
+        MeasureTheory.Measure.map (fun Y => SketchOrientation.rangeProjector (Matrix.diagonal s * Y)) (ν i) =
+          MeasureTheory.Measure.map SketchOrientation.rangeProjector (ν i))
+  (hPerm :
+    ∀ (i : ℕ) (π : Equiv.Perm (Fin (n i))),
+      MeasureTheory.Measure.map (fun Y => SketchOrientation.rangeProjector (Equiv.Perm.permMatrix ℝ π * Y)) (ν i) =
+        MeasureTheory.Measure.map SketchOrientation.rangeProjector (ν i)) :
+  (∀ (i : ℕ),
+      SketchOrientation.meanSketchProjector (TypicalOrientations.fullRankSketchLaw ⋯ (ν i)) = (↑(k + p) / ↑(n i)) • 1) ∧
+    Filter.Tendsto (fun i => TypicalOrientations.meanDiscrepancy k (TypicalOrientations.fullRankSketchLaw ⋯ (ν i)))
+        Filter.atTop (nhds 0) ∧
+      (4 ≤ p →
+        ∀ (i : ℕ),
+          TypicalOrientations.meanDiscrepancy k (TypicalOrientations.fullRankSketchLaw ⋯ (ν i)) ≤
+            TypicalOrientations.gaussianTailMomentConstant k p 2 * √(2 * (↑(k + p) / ↑(n i))))
+TypicalOrientations.corollary_4_3.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι] {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p)
+  (n : ℕ → ℕ) (hn : Filter.Tendsto n Filter.atTop Filter.atTop) (hd : ∀ (t : ℕ), k + p ≤ n t)
+  (μ : (t : ℕ) → ι → MeasureTheory.Measure (SketchOrientation.OrthogonalProjector (n t) (k + p)))
+  [∀ (t : ℕ) (j : ι), MeasureTheory.IsProbabilityMeasure (μ t j)]
+  (hρ : ∀ (j : ι), Filter.Tendsto (fun t => TypicalOrientations.meanProjectorNorm (μ t j)) Filter.atTop (nhds 0)) :
+  Filter.Tendsto (fun t => TypicalOrientations.commonMeanDiscrepancy k (μ t)) Filter.atTop (nhds 0) ∧
+    ∀ (i j : ι),
+      Filter.Tendsto (fun t => TypicalOrientations.pairwiseMeanDiscrepancy k (μ t i) (μ t j)) Filter.atTop (nhds 0)
+TypicalOrientations.paper_explicit_rate {n k p : ℕ} (hk : 0 < k) (hn : k + p ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n (k + p))) [MeasureTheory.IsProbabilityMeasure μ]
+  {r : ℝ} (hr : 1 < r) (hr₂ : r ≤ 2) (hp : 2 * r < ↑p + 1) :
+  TypicalOrientations.meanDiscrepancy k μ ≤
+    3 * TypicalOrientations.gaussianTailMomentConstant k p r *
+      (2 * TypicalOrientations.meanProjectorNorm μ) ^ (1 - 1 / r)
+TypicalOrientations.paper_root_rate {n k p : ℕ} (hk : 0 < k) (hp : 4 ≤ p) (hn : k + p ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n (k + p))) [MeasureTheory.IsProbabilityMeasure μ] :
+  TypicalOrientations.meanDiscrepancy k μ ≤
+    TypicalOrientations.gaussianTailMomentConstant k p 2 * √(2 * TypicalOrientations.meanProjectorNorm μ)
+TypicalOrientations.meanDiscrepancy_eventually_lower {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) :
+  ∀ᶠ (n : ℕ) in Filter.atTop,
+    ∀ (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n (k + p)))
+      [_hμ : MeasureTheory.IsProbabilityMeasure μ],
+      TypicalOrientations.spikeConverseConstant (k + p) *
+          (TypicalOrientations.meanProjectorNorm μ - ↑(k + p) / ↑n) ^ 2 ≤
+        TypicalOrientations.meanDiscrepancy k μ
+TypicalOrientations.orientationGap_probability_le {n k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (hn : k + p ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n (k + p))) [MeasureTheory.IsProbabilityMeasure μ]
+  (σ : TypicalOrientations.Spectra n k) {ε : ℝ} (hε : 0 < ε) :
+  (SketchOrientation.gaussianRightOrthogonalLaw n).real {U | ε < TypicalOrientations.orientationGap k μ σ U} ≤
+    TypicalOrientations.meanDiscrepancy k μ / ε
+TypicalOrientations.rotationBrascampLieb : TypicalOrientations.RotationBrascampLieb
+TypicalOrientations.projector_weighted_energy_iff_posSemidef {n m : ℕ} {rank : Fin m → ℕ}
+  (P : (i : Fin m) → SketchOrientation.OrthogonalProjector n (rank i)) (c : Fin m → ℝ) :
+  (∀ (x : EuclideanSpace ℝ (Fin n)), ∑ i, c i * ‖(Matrix.toEuclideanLin ↑(P i)) x‖ ^ 2 ≤ ‖x‖ ^ 2) ↔
+    (1 - ∑ i, c i • ↑(P i)).PosSemidef
+TypicalOrientations.rotationBrascampLieb_mixedRanks : TypicalOrientations.RotationBrascampLiebMixedRanks
+TypicalOrientations.gaussian_tailRelativeMean_sup_eq_worstCase {n k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (hn : k + p ≤ n) :
+  sSup
+      (Set.range fun A =>
+        ∫ (G : Matrix (Fin n) (Fin (k + p)) ℝ),
+          SketchOrientation.tailRelativeError k (↑A.snd) G ∂SketchOrientation.gaussianMatrixLaw n (k + p)) =
+    TypicalOrientations.gaussianWorstCaseValue n k p
+TypicalOrientations.gaussianMean_equalSpike_tendsto {n k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (hn : k + p ≤ n) :
+  Filter.Tendsto (fun Γ => TypicalOrientations.gaussianMean k (k + p) (TypicalOrientations.equalSpikeSpectrum k Γ))
+    Filter.atTop (nhds (TypicalOrientations.gaussianWorstCaseValue n k p))
+TypicalOrientations.twoPassDct_figureNotes_unbounded {n k l : ℕ} (hk : 0 < k) (hkl : k < l) (hln : l < n) (a : ℝ) :
+  ∃ A,
+    IsUnit A ∧
+      0 < SketchOrientation.optimalTail k A ∧
+        a <
+          ∫ (Z : Matrix (Fin n) (Fin l) ℝ),
+            SketchOrientation.tailRelativeError k A Z ∂↑(SketchOrientation.DctPasses.two.sketchLaw ⋯)
+SketchOrientation.proposition_C_1 {n l : ℕ} (k : ℕ) (σ : Fin n → ℝ) (_hσ : ∀ (j : Fin n), 0 ≤ σ j)
+  (rows : Fin l ↪ Fin n) (signs₁ signs₂ : Fin n → ℝ) (_hsigns₁ : ∀ (j : Fin n), signs₁ j = -1 ∨ signs₁ j = 1)
+  (hsigns₂ : ∀ (j : Fin n), signs₂ j = -1 ∨ signs₂ j = 1)
+  (htail : 0 < SketchOrientation.optimalTail k (Matrix.diagonal σ)) :
+  SketchOrientation.tailRelativeError k (Matrix.diagonal σ) (SketchOrientation.twoPassDct rows signs₁ signs₂) =
+    SketchOrientation.tailRelativeError k (Matrix.diagonal σ * (SketchOrientation.pairedDctII n).transpose)
+      (SketchOrientation.onePassDct rows signs₁)
+TypicalOrientations.meanProjectorNorm_mem_interval {n l : ℕ} (hn : 0 < n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n l)) [MeasureTheory.IsProbabilityMeasure μ] :
+  TypicalOrientations.meanProjectorNorm μ ∈ Set.Icc (↑l / ↑n) 1
+TypicalOrientations.measurable_rangeProjector_of_matrix {n l : ℕ} : Measurable SketchOrientation.rangeProjector
+TypicalOrientations.meanRangeProjector_eq_expected_rank_identity {n l : ℕ} (hn : 0 < n)
+  (μ : MeasureTheory.Measure (Matrix (Fin n) (Fin l) ℝ)) [MeasureTheory.IsProbabilityMeasure μ]
+  (hSign :
+    ∀ (s : Fin n → ℝ),
+      (∀ (i : Fin n), s i = 1 ∨ s i = -1) →
+        MeasureTheory.Measure.map (fun Ω => SketchOrientation.rangeProjector (Matrix.diagonal s * Ω)) μ =
+          MeasureTheory.Measure.map SketchOrientation.rangeProjector μ)
+  (hPerm :
+    ∀ (π : Equiv.Perm (Fin n)),
+      MeasureTheory.Measure.map (fun Ω => SketchOrientation.rangeProjector (Equiv.Perm.permMatrix ℝ π * Ω)) μ =
+        MeasureTheory.Measure.map SketchOrientation.rangeProjector μ) :
+  (Matrix.of fun i j => ∫ (Ω : Matrix (Fin n) (Fin l) ℝ), SketchOrientation.rangeProjector Ω i j ∂μ) =
+    ((∫ (Ω : Matrix (Fin n) (Fin l) ℝ), ↑Ω.rank ∂μ) / ↑n) • 1
+TypicalOrientations.fullRank_conditioned_preserves_column_space_symmetry {n l : ℕ}
+  (μ : MeasureTheory.Measure (Matrix (Fin n) (Fin l) ℝ)) (S : Matrix (Fin n) (Fin n) ℝ) (hS : S.transpose * S = 1)
+  (hLaw :
+    MeasureTheory.Measure.map (fun Ω => SketchOrientation.rangeProjector (S * Ω)) μ =
+      MeasureTheory.Measure.map SketchOrientation.rangeProjector μ) :
+  have ν := μ[|{Ω | Ω.rank = l}];
+  MeasureTheory.Measure.map (fun Ω => SketchOrientation.rangeProjector (S * Ω)) ν =
+    MeasureTheory.Measure.map SketchOrientation.rangeProjector ν
+TypicalOrientations.equalSpike_meanResidual_ge_rankDeficiency {n k l : ℕ} (hkn : k < n) (Γ : ℝ) (hΓ : 1 ≤ Γ)
+  (μ : MeasureTheory.Measure (Matrix (Fin n) (Fin l) ℝ)) [MeasureTheory.IsProbabilityMeasure μ] :
+  TypicalOrientations.rankDeficiencyProbability k μ * Γ / (↑n - ↑k) ≤
+    ∫ (z : Matrix (Fin n) (Fin n) ℝ × Matrix (Fin n) (Fin l) ℝ),
+      TypicalOrientations.matrixOrientationResidual k (TypicalOrientations.equalSpikeSpectrum k Γ) z.1
+        z.2 ∂(SketchOrientation.gaussianRightOrthogonalLaw n).prod μ
+TypicalOrientations.rankDeficiency_meanDiscrepancy_unbounded {n k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p) (hn : k + p ≤ n)
+  (μ : MeasureTheory.Measure (Matrix (Fin n) (Fin (k + p)) ℝ)) [MeasureTheory.IsProbabilityMeasure μ]
+  (hδ : 0 < TypicalOrientations.rankDeficiencyProbability k μ) :
+  ¬BddAbove
+      (Set.range fun σ =>
+        ∫ (U : Matrix (Fin n) (Fin n) ℝ),
+          |TypicalOrientations.matrixConditionalResidual k (↑σ) μ U -
+              TypicalOrientations.gaussianMean k (k + p) ↑σ| ∂SketchOrientation.gaussianRightOrthogonalLaw n)
+TypicalOrientations.paper_growingWidth_meanDiscrepancy_tendsto {d p : ℕ → ℕ} {k : ℕ} (hk : 0 < k)
+  (hl : ∀ (j : ℕ), k + p j ≤ d j)
+  (μ : (j : ℕ) → MeasureTheory.Measure (SketchOrientation.OrthogonalProjector (d j) (k + p j)))
+  [∀ (j : ℕ), MeasureTheory.IsProbabilityMeasure (μ j)] (hp : ∀ᶠ (j : ℕ) in Filter.atTop, 4 ≤ p j)
+  (hIso : ∀ᶠ (j : ℕ) in Filter.atTop, TypicalOrientations.meanProjectorNorm (μ j) = ↑(k + p j) / ↑(d j))
+  (hsmall : Filter.Tendsto (fun j => ↑(k + p j) / ↑(d j)) Filter.atTop (nhds 0)) :
+  Filter.Tendsto (fun j => TypicalOrientations.meanDiscrepancy k (μ j)) Filter.atTop (nhds 0)
+TypicalOrientations.conditionalMean_standardDeviation_eq {n k l : ℕ} (hn : l ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n l)) [MeasureTheory.IsProbabilityMeasure μ]
+  (σ : TypicalOrientations.Spectra n k) :
+  √(ProbabilityTheory.variance (TypicalOrientations.conditionalMean k (↑σ) μ)
+        (SketchOrientation.gaussianRightOrthogonalLaw n)) =
+    √(∫ (U : Matrix (Fin n) (Fin n) ℝ),
+        |TypicalOrientations.conditionalMean k (↑σ) μ U - TypicalOrientations.gaussianMean k l ↑σ| ^
+          2 ∂SketchOrientation.gaussianRightOrthogonalLaw n)
+TypicalOrientations.conditionalMean_standardDeviation_le {n k p : ℕ} (hk : 0 < k) (hp : 4 ≤ p) (hn : k + p ≤ n)
+  (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n (k + p))) [MeasureTheory.IsProbabilityMeasure μ]
+  (σ : TypicalOrientations.Spectra n k) :
+  √(ProbabilityTheory.variance (TypicalOrientations.conditionalMean k (↑σ) μ)
+        (SketchOrientation.gaussianRightOrthogonalLaw n)) ≤
+    TypicalOrientations.gaussianTailMomentConstant k p 2 * √(2 * TypicalOrientations.meanProjectorNorm μ)
+TypicalOrientations.blockMixture_meanProjectorNorm_and_conditionalMean {n k l : ℕ} {α : ℝ} (hα : 0 ≤ α) (hα₁ : α ≤ 1)
+  (hl : 0 < l) (μ : MeasureTheory.Measure (SketchOrientation.OrthogonalProjector n l))
+  [MeasureTheory.IsProbabilityMeasure μ] (P₀ : SketchOrientation.OrthogonalProjector n l)
+  (hμ : SketchOrientation.meanSketchProjector μ = (↑l / ↑n) • 1) (σ : TypicalOrientations.Spectra n k)
+  (U : Matrix (Fin n) (Fin n) ℝ) :
+  TypicalOrientations.meanProjectorNorm (TypicalOrientations.firstBlockMixture α μ P₀) = α + (1 - α) * (↑l / ↑n) ∧
+    TypicalOrientations.conditionalMean k (↑σ) (TypicalOrientations.firstBlockMixture α μ P₀) U =
+      (1 - α) * TypicalOrientations.conditionalMean k (↑σ) μ U +
+        α *
+          (SketchOrientation.squaredResidual (Matrix.diagonal ↑σ) (U * ↑P₀) /
+            TypicalOrientations.optimalSquaredTail k ↑σ)
+TypicalOrientations.replicate_covariance_eq_conditionalMean_variance.{u_1} {A : Type u_1} [MeasurableSpace A]
+  (η : MeasureTheory.Measure A) [MeasureTheory.IsProbabilityMeasure η] (κ₁ κ₂ : ProbabilityTheory.Kernel A ℝ)
+  [ProbabilityTheory.IsMarkovKernel κ₁] [ProbabilityTheory.IsMarkovKernel κ₂] (F : A → ℝ)
+  (hF : MeasureTheory.MemLp F 2 η) (h₁ : ∀ᵐ (a : A) ∂η, ∫ (y : ℝ), y ∂κ₁ a = F a)
+  (h₂ : ∀ᵐ (a : A) ∂η, ∫ (y : ℝ), y ∂κ₂ a = F a)
+  (hY₁ : MeasureTheory.MemLp (fun z => z.2.1) 2 (η.compProd (κ₁.prod κ₂)))
+  (hY₂ : MeasureTheory.MemLp (fun z => z.2.2) 2 (η.compProd (κ₁.prod κ₂))) :
+  ProbabilityTheory.covariance (fun z => z.2.1) (fun z => z.2.2) (η.compProd (κ₁.prod κ₂)) =
+    ProbabilityTheory.variance F η
+TypicalOrientations.intro_coordinateSpike_identity_mean {n ℓ : ℕ} (hn : 1 < n) (hℓn : ℓ ≤ n) {Γ : ℝ} (hΓ : 1 < Γ) :
+  TypicalOrientations.conditionalMean 1 (TypicalOrientations.equalSpikeSpectrum 1 Γ)
+        (SketchOrientation.uniformCoordinateSketchLaw n ℓ) 1 =
+      (1 - ↑ℓ / ↑n) * (Γ + ↑n - 1) / (↑n - 1) ∧
+    TypicalOrientations.conditionalMean 1 (TypicalOrientations.equalSpikeSpectrum 1 Γ)
+        (SketchOrientation.uniformCoordinateSketchLaw n ℓ) 1 =
+      (↑n - ↑ℓ) / (↑n - 1) * (1 + (Γ - 1) / ↑n)
+TypicalOrientations.intro_coordinateSpike_gaussianMean_le_worstCase {n p : ℕ} (hp : 2 ≤ p) (hn : 1 + p ≤ n) {Γ : ℝ}
+  (hΓ : 1 < Γ) :
+  TypicalOrientations.gaussianMean 1 (1 + p) (TypicalOrientations.equalSpikeSpectrum 1 Γ) ≤
+    (↑n - ↑(1 + p)) / (↑n - 1) * (1 + 1 / (↑p - 1))
+TypicalOrientations.intro_coordinateSpike_divergence_and_Haar_agreement {d : ℕ → ℕ} {p : ℕ} (hp : 2 ≤ p)
+  (hℓd : ∀ (j : ℕ), 1 + p ≤ d j) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) :
+  Filter.Tendsto
+      (fun j =>
+        TypicalOrientations.conditionalMean 1 (TypicalOrientations.equalSpikeSpectrum 1 (↑(d j) ^ 2))
+          (SketchOrientation.uniformCoordinateSketchLaw (d j) (1 + p)) 1)
+      Filter.atTop Filter.atTop ∧
+    (∀ (j : ℕ),
+        TypicalOrientations.gaussianMean 1 (1 + p) (TypicalOrientations.equalSpikeSpectrum 1 (↑(d j) ^ 2)) ≤
+          TypicalOrientations.gaussianTailMomentConstant 1 p (5 / 4)) ∧
+      Filter.Tendsto
+        (fun j =>
+          ∫ (U : Matrix (Fin (d j)) (Fin (d j)) ℝ),
+            |TypicalOrientations.conditionalMean 1 (TypicalOrientations.equalSpikeSpectrum 1 (↑(d j) ^ 2))
+                  (SketchOrientation.uniformCoordinateSketchLaw (d j) (1 + p)) U -
+                TypicalOrientations.gaussianMean 1 (1 + p)
+                  (TypicalOrientations.equalSpikeSpectrum 1
+                    (↑(d j) ^ 2))| ∂SketchOrientation.gaussianRightOrthogonalLaw (d j))
+        Filter.atTop (nhds 0)
+TypicalOrientations.coordinateSubsetProjectorLaw_meanNorm {n ℓ : ℕ} (hn : 0 < n)
+  (ν : MeasureTheory.Measure (SketchOrientation.CoordinateSubset n ℓ)) :
+  have x := ⋯;
+  TypicalOrientations.meanProjectorNorm (TypicalOrientations.coordinateSubsetProjectorLaw ν) =
+    Finset.univ.sup' ⋯ fun i => ν.real {s | i ∈ ↑s}
+TypicalOrientations.uniformPrefixCoordinateSketch_outside_eq_zero {n ℓ m : ℕ} (hmn : m ≤ n)
+  (s : SketchOrientation.CoordinateSubset m ℓ) (i : Fin n) (hi : m ≤ ↑i) :
+  (Matrix.toEuclideanLin
+        ↑(SketchOrientation.coordinateSketchProjector
+            ((SketchOrientation.coordinateSubsetEmbedding s).trans (Fin.castLEEmb hmn))))
+      (EuclideanSpace.single i 1) =
+    0
+TypicalOrientations.uniformPrefixCoordinateSketch_sqrt_regime {d : ℕ → ℕ} {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p)
+  (hℓd : ∀ (j : ℕ), k + p ≤ (d j).sqrt) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) :
+  Filter.Tendsto (fun j => ↑(d j).sqrt / ↑(d j)) Filter.atTop (nhds 0) ∧
+    Filter.Tendsto
+        (fun j => TypicalOrientations.meanProjectorNorm (TypicalOrientations.uniformPrefixCoordinateSketchLaw ⋯))
+        Filter.atTop (nhds 0) ∧
+      Filter.Tendsto
+        (fun j => TypicalOrientations.meanDiscrepancy k (TypicalOrientations.uniformPrefixCoordinateSketchLaw ⋯))
+        Filter.atTop (nhds 0)
+TypicalOrientations.scaledCoordinateSpikeReadout_law_equal {n ℓ : ℕ} (hn : 0 < n) (J J' : Fin ℓ ↪ Fin n) :
+  MeasureTheory.Measure.map (TypicalOrientations.scaledCoordinateSpikeReadout hn J)
+      (SketchOrientation.gaussianRightOrthogonalLaw n) =
+    MeasureTheory.Measure.map (TypicalOrientations.scaledCoordinateSpikeReadout hn J')
+      (SketchOrientation.gaussianRightOrthogonalLaw n)
+TypicalOrientations.scaledCoordinateSpikeReadout_tendstoInDistribution {d : ℕ → ℕ} {ℓ : ℕ} (hnd : ∀ (j : ℕ), 0 < d j)
+  (hℓd : ∀ (j : ℕ), ℓ ≤ d j) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) (J : (j : ℕ) → Fin ℓ ↪ Fin (d j)) :
+  MeasureTheory.TendstoInDistribution (fun j => TypicalOrientations.scaledCoordinateSpikeReadout ⋯ (J j)) Filter.atTop
+    id (fun j => SketchOrientation.gaussianRightOrthogonalLaw (d j))
+    (ProbabilityTheory.stdGaussian (TypicalOrientations.Ambient✝ ℓ))
+TypicalOrientations.coordinateSpike_fixedConditional_tendstoInDistribution {d : ℕ → ℕ} {k ℓ : ℕ} (hk : 0 < k)
+  (hkd : ∀ (j : ℕ), k < d j) (hℓ : 0 < ℓ) (hℓd : ∀ (j : ℕ), ℓ < d j) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) :
+  MeasureTheory.TendstoInDistribution
+    (fun j =>
+      TypicalOrientations.conditionalMean k (TypicalOrientations.spikeSpectrum (d j))
+        (SketchOrientation.fixedCoordinateSketchLaw ⋯))
+    Filter.atTop (fun y => 1 + (1 + y)⁻¹) (fun j => SketchOrientation.gaussianRightOrthogonalLaw (d j))
+    (SketchOrientation.chiSquareLaw ℓ)
+TypicalOrientations.coordinateSpike_limit_no_atoms {ℓ : ℕ} (x : ℝ) :
+  (MeasureTheory.Measure.map (fun y => 1 + (1 + y)⁻¹) (SketchOrientation.chiSquareLaw ℓ)) {x} = 0
+TypicalOrientations.coordinateSpike_gaussianMean_tendsto {d : ℕ → ℕ} {k ℓ : ℕ} (hk : 0 < k) (hkd : ∀ (j : ℕ), k < d j)
+  (hℓ : 0 < ℓ) (hℓd : ∀ (j : ℕ), ℓ < d j) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) :
+  Filter.Tendsto (fun j => TypicalOrientations.gaussianMean k ℓ (TypicalOrientations.spikeSpectrum (d j))) Filter.atTop
+    (nhds (1 + ∫ (y : ℝ), (1 + y)⁻¹ ∂SketchOrientation.chiSquareLaw ℓ))
+TypicalOrientations.coordinateSpike_uniformConditional_tendsto_L1 {d : ℕ → ℕ} {k p : ℕ} (hk : 0 < k) (hp : 2 ≤ p)
+  (hℓd : ∀ (j : ℕ), k + p < d j) (hd : Filter.Tendsto d Filter.atTop Filter.atTop) :
+  Filter.Tendsto
+    (fun j =>
+      ∫ (U : Matrix (Fin (d j)) (Fin (d j)) ℝ),
+        |TypicalOrientations.conditionalMean k (TypicalOrientations.spikeSpectrum (d j))
+              (SketchOrientation.uniformCoordinateSketchLaw (d j) (k + p)) U -
+            (1 +
+              ∫ (y : ℝ),
+                (1 + y)⁻¹ ∂SketchOrientation.chiSquareLaw (k + p))| ∂SketchOrientation.gaussianRightOrthogonalLaw (d j))
+    Filter.atTop (nhds 0)
+TypicalOrientations.flatWalshCoefficient_inner_squares {m ell : ℕ} (J : Fin ell ↪ SketchOrientation.Edge.Walsh.Label m)
+  (t : SketchOrientation.Edge.Walsh.Block ell) :
+  ∑ x, inner ℝ (TypicalOrientations.flatWalshCoefficient J x) t ^ 2 = ‖t‖ ^ 2
+TypicalOrientations.flatWalshCoefficient_inner_bound {m ell : ℕ} (J : Fin ell ↪ SketchOrientation.Edge.Walsh.Label m)
+  (x : SketchOrientation.Edge.Walsh.Label m) (t : SketchOrientation.Edge.Walsh.Block ell) :
+  |inner ℝ (TypicalOrientations.flatWalshCoefficient J x) t| ≤ √(↑ell / 2 ^ m) * ‖t‖
+TypicalOrientations.flatWalshCoefficient_lindeberg_tail_zero {ell : ℕ} {digits : ℕ → ℕ}
+  (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) (t : SketchOrientation.Edge.Walsh.Block ell) (ε : ℝ)
+  (hε : 0 < ε) :
+  ∀ᶠ (i : ℕ) in Filter.atTop,
+    ∀ (J : Fin ell ↪ SketchOrientation.Edge.Walsh.Label (digits i)),
+      (∑ x,
+          if ε ≤ |inner ℝ (TypicalOrientations.flatWalshCoefficient J x) t| then
+            inner ℝ (TypicalOrientations.flatWalshCoefficient J x) t ^ 2
+          else 0) =
+        0
+TypicalOrientations.flatWalshScaledProjection_fixedRows_tendsto {ell : ℕ} {digits : ℕ → ℕ}
+  (J : (i : ℕ) → Fin ell ↪ SketchOrientation.Edge.Walsh.Label (digits i))
+  (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) :
+  Filter.Tendsto
+    (fun i =>
+      SketchOrientation.Edge.Walsh.finiteProbabilityLaw fun z => TypicalOrientations.flatWalshScaledProjection (J i, z))
+    Filter.atTop (nhds (SketchOrientation.Edge.Walsh.gaussianBlockLaw ell))
+TypicalOrientations.flatWalshScaledProjection_uniformRows_tendsto {ell : ℕ} {digits : ℕ → ℕ}
+  (hWidth : ∀ (i : ℕ), ell ≤ 2 ^ digits i) (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) :
+  Filter.Tendsto
+    (fun i => SketchOrientation.Edge.Walsh.finiteProbabilityLaw TypicalOrientations.flatWalshScaledProjection)
+    Filter.atTop (nhds (SketchOrientation.Edge.Walsh.gaussianBlockLaw ell))
+TypicalOrientations.flatWalshRareEvent_probability {m ell : ℕ} (h : ell ≤ 2 ^ m) :
+  SketchOrientation.Edge.Walsh.uniformProbability TypicalOrientations.flatWalshRareEvent =
+    (2 ^ 2 ^ m)⁻¹ * (1 - ↑ell / 2 ^ m)
+TypicalOrientations.flatWalshRareEvent_miss {m ell : ℕ} (d : TypicalOrientations.FlatWalshDraw m ell)
+  (hd : TypicalOrientations.flatWalshRareEvent d) :
+  (TypicalOrientations.flatWalshSketch d).transpose * TypicalOrientations.flatWalshTarget m = 0
+TypicalOrientations.flatWalshRelativeMean_rareMiss_lower {m ell : ℕ} {Γ : ℝ} (hΓ : 1 ≤ Γ) (hm : 0 < m)
+  (hWidth : ell < 2 ^ m) :
+  (2 ^ 2 ^ m)⁻¹ * (1 - ↑ell / 2 ^ m) * Γ / (2 ^ m - 1) ≤ TypicalOrientations.flatWalshRelativeMean m ell Γ
+TypicalOrientations.flatWalsh_exponential_lower_isEquivalent_dim {ell : ℕ} {digits : ℕ → ℕ}
+  (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) :
+  Asymptotics.IsEquivalent Filter.atTop (fun i => (1 - ↑ell / 2 ^ digits i) * (2 ^ digits i) ^ 2 / (2 ^ digits i - 1))
+    fun i => 2 ^ digits i
+TypicalOrientations.flatWalshRelativeMean_exponential_tendsto_atTop {ell : ℕ} {digits : ℕ → ℕ}
+  (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) :
+  Filter.Tendsto
+    (fun i => TypicalOrientations.flatWalshRelativeMean (digits i) ell ((2 ^ digits i) ^ 2 * 2 ^ 2 ^ digits i))
+    Filter.atTop Filter.atTop
+TypicalOrientations.signedPermBlockLaw_eq_actualProjection {ell a b : ℕ}
+  (rows : Fin b ↪ SketchOrientation.Edge.Walsh.Label a) (cols : Fin ell ↪ SketchOrientation.Edge.Walsh.Label a) :
+  SketchOrientation.Edge.Walsh.signedPermBlockLaw rows cols =
+    SketchOrientation.Edge.Walsh.finiteProbabilityLaw fun d =>
+      WithLp.toLp 2 fun j =>
+        √(2 ^ a) *
+          ((SketchOrientation.Edge.Walsh.signedMatrix cols d).transpose * SketchOrientation.Edge.Walsh.targetFrame rows)
+            j 0
+TypicalOrientations.walsh_firstColumns_miss_cost {m s : ℕ → ℕ} {ell : ℕ} (hell : 2 < ell)
+  (rows : (i : ℕ) → Fin (s i) ↪ SketchOrientation.Edge.Walsh.Label (m i)) (hw : ∀ (i : ℕ), ell ≤ 2 ^ m i)
+  (hs : Filter.Tendsto s Filter.atTop Filter.atTop) (he : ∀ᶠ (i : ℕ) in Filter.atTop, Even (s i))
+  (hgrowth : Filter.Tendsto (fun i => ↑(s i) ^ (2 + ↑ell / 2) / 2 ^ m i) Filter.atTop (nhds 0)) :
+  Filter.Tendsto
+      (fun i => SketchOrientation.Edge.Walsh.signedPermBlockLaw (rows i) (TypicalOrientations.walshFirstSelector ⋯))
+      Filter.atTop (nhds (SketchOrientation.Edge.Walsh.gaussianBlockLaw ell)) ∧
+    (Asymptotics.IsEquivalent Filter.atTop
+        (fun i =>
+          SketchOrientation.Edge.Walsh.actualMissProbability (rows i) (TypicalOrientations.walshFirstSelector ⋯))
+        fun i => (2 / Real.pi) ^ (↑ell / 2) * ↑(s i) ^ (-↑ell / 2)) ∧
+      ∀ (L : ℕ → ℝ),
+        Filter.Tendsto L Filter.atTop Filter.atTop →
+          Filter.Tendsto
+            (fun i =>
+              TypicalOrientations.walshMeanExcess (rows i) (TypicalOrientations.walshFirstSelector ⋯) (L i) -
+                2 ^ m i / (2 ^ m i - 1) * L i *
+                  SketchOrientation.Edge.Walsh.actualMissProbability (rows i)
+                    (TypicalOrientations.walshFirstSelector ⋯))
+            Filter.atTop (nhds (1 / (↑ell - 2)))
+TypicalOrientations.walsh_firstColumns_miss_cost_littleO {m s : ℕ → ℕ} {ell : ℕ} (hell : 2 < ell)
+  (rows : (i : ℕ) → Fin (s i) ↪ SketchOrientation.Edge.Walsh.Label (m i)) (hw : ∀ (i : ℕ), ell ≤ 2 ^ m i)
+  (hs : Filter.Tendsto s Filter.atTop Filter.atTop) (he : ∀ᶠ (i : ℕ) in Filter.atTop, Even (s i))
+  (hgrowth : Filter.Tendsto (fun i => ↑(s i) ^ (2 + ↑ell / 2) / 2 ^ m i) Filter.atTop (nhds 0)) (L : ℕ → ℝ)
+  (hL : Filter.Tendsto L Filter.atTop Filter.atTop) :
+  (fun i =>
+      TypicalOrientations.walshMeanExcess (rows i) (TypicalOrientations.walshFirstSelector ⋯) (L i) -
+          2 ^ m i / (2 ^ m i - 1) * L i *
+            SketchOrientation.Edge.Walsh.actualMissProbability (rows i) (TypicalOrientations.walshFirstSelector ⋯) -
+        1 / (↑ell - 2)) =o[Filter.atTop]
+    fun x => 1
+TypicalOrientations.walsh_miss_cost_realizes_regimes {m s : ℕ → ℕ} {ell : ℕ} (hell : 2 < ell)
+  (rows : (i : ℕ) → Fin (s i) ↪ SketchOrientation.Edge.Walsh.Label (m i))
+  (cols : (i : ℕ) → Fin ell ↪ SketchOrientation.Edge.Walsh.Label (m i))
+  (hs : Filter.Tendsto s Filter.atTop Filter.atTop) (he : ∀ᶠ (i : ℕ) in Filter.atTop, Even (s i))
+  (hgrowth : Filter.Tendsto (fun i => ↑(s i) ^ (2 + ↑ell / 2) / 2 ^ m i) Filter.atTop (nhds 0)) :
+  have mean := fun L i => TypicalOrientations.walshMeanExcess (rows i) (cols i) (L i);
+  (∃ L, Filter.Tendsto L Filter.atTop Filter.atTop ∧ Filter.Tendsto (mean L) Filter.atTop (nhds (1 / (↑ell - 2)))) ∧
+    (∀ (a : ℝ),
+        0 < a →
+          ∃ L,
+            Filter.Tendsto L Filter.atTop Filter.atTop ∧
+              Filter.Tendsto (mean L) Filter.atTop (nhds (1 / (↑ell - 2) + a))) ∧
+      ∃ L, Filter.Tendsto L Filter.atTop Filter.atTop ∧ Filter.Tendsto (mean L) Filter.atTop Filter.atTop
+TypicalOrientations.flatWalsh_uniform_row_inclusion {m ell : ℕ} (h : ell ≤ 2 ^ m)
+  (x : SketchOrientation.Edge.Walsh.Label m) :
+  (SketchOrientation.Edge.Walsh.uniformProbability fun J => x ∈ Set.range ⇑J) = ↑ell / 2 ^ m
+TypicalOrientations.flatWalsh_conditional_projector_entry {m ell : ℕ} (h : ell ≤ 2 ^ m)
+  (z : SketchOrientation.Edge.Walsh.Label m → ZMod 2) (x y : SketchOrientation.Edge.Walsh.Label m) :
+  (SketchOrientation.Edge.Walsh.uniformMean fun J =>
+      (TypicalOrientations.flatWalshSketch (J, z) * (TypicalOrientations.flatWalshSketch (J, z)).transpose) x y) =
+    ↑ell / 2 ^ m * if x = y then 1 else 0
+TypicalOrientations.flatWalsh_meanSketchProjector {m ell : ℕ} (h : ell ≤ 2 ^ m) :
+  SketchOrientation.meanSketchProjector (TypicalOrientations.flatWalshProjectorLaw h) = (↑ell / ↑(2 ^ m)) • 1
+TypicalOrientations.flatWalsh_conditionalMean_eq_draw_average {m ell : ℕ} (h : ell ≤ 2 ^ m) (k : ℕ)
+  (σ : Fin (2 ^ m) → ℝ) (U : Matrix (Fin (2 ^ m)) (Fin (2 ^ m)) ℝ) :
+  TypicalOrientations.conditionalMean k σ (TypicalOrientations.flatWalshProjectorLaw h) U =
+    SketchOrientation.Edge.Walsh.uniformMean fun d =>
+      SketchOrientation.squaredResidual (Matrix.diagonal σ)
+          (U * (TypicalOrientations.flatWalshSketch d).submatrix (⇑(TypicalOrientations.flatWalshRelabel m).symm) id) /
+        TypicalOrientations.optimalSquaredTail k σ
+TypicalOrientations.flatWalsh_gap_gaussianMean_le {m p : ℕ} (hp : 2 ≤ p) (h : 1 + p ≤ 2 ^ m) :
+  TypicalOrientations.gaussianMean 1 (1 + p)
+      (TypicalOrientations.equalSpikeSpectrum 1 (TypicalOrientations.flatWalshGap m)) ≤
+    TypicalOrientations.gaussianTailMomentConstant 1 p (5 / 4)
+TypicalOrientations.flatWalsh_gap_Haar_agreement {digits : ℕ → ℕ} {p : ℕ} (hp : 2 ≤ p)
+  (hm : Filter.Tendsto digits Filter.atTop Filter.atTop) (h : ∀ (j : ℕ), 1 + p ≤ 2 ^ digits j) :
+  Filter.Tendsto
+    (fun j =>
+      ∫ (U : Matrix (Fin (2 ^ digits j)) (Fin (2 ^ digits j)) ℝ),
+        |TypicalOrientations.conditionalMean 1
+              (TypicalOrientations.equalSpikeSpectrum 1 (TypicalOrientations.flatWalshGap (digits j)))
+              (TypicalOrientations.flatWalshProjectorLaw ⋯) U -
+            TypicalOrientations.gaussianMean 1 (1 + p)
+              (TypicalOrientations.equalSpikeSpectrum 1
+                (TypicalOrientations.flatWalshGap
+                  (digits j)))| ∂SketchOrientation.gaussianRightOrthogonalLaw (2 ^ digits j))
+    Filter.atTop (nhds 0)
+TypicalOrientations.fullRankSketchLaw_gaussian_eq_haarSketchProjector {n l : ℕ} (hl : l ≤ n) :
+  TypicalOrientations.fullRankSketchLaw hl (SketchOrientation.gaussianMatrixLaw n l) =
+    TypicalOrientations.haarSketchProjectorLaw hl
+TypicalOrientations.conditionalMean_gaussianSketch_eq_gaussianMean {n l : ℕ} (hl : l ≤ n) (k : ℕ) (σ : Fin n → ℝ)
+  (U : Matrix (Fin n) (Fin n) ℝ) (hU : U.transpose * U = 1) :
+  TypicalOrientations.conditionalMean k σ
+      (TypicalOrientations.fullRankSketchLaw hl (SketchOrientation.gaussianMatrixLaw n l)) U =
+    TypicalOrientations.gaussianMean k l σ
+TypicalOrientations.meanDiscrepancy_gaussianSketch_eq_zero {n l : ℕ} (hl : l ≤ n) (k : ℕ) :
+  TypicalOrientations.meanDiscrepancy k
+      (TypicalOrientations.fullRankSketchLaw hl (SketchOrientation.gaussianMatrixLaw n l)) =
+    0
+TypicalOrientations.meanProjectorNorm_gaussianSketch {n l : ℕ} (hn : 0 < n) (hl : l ≤ n) :
+  TypicalOrientations.meanProjectorNorm
+      (TypicalOrientations.fullRankSketchLaw hl (SketchOrientation.gaussianMatrixLaw n l)) =
+    ↑l / ↑n

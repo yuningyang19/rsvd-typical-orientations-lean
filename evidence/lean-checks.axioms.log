@@ -1,0 +1,177 @@
+'TypicalOrientations.residual_rotate_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.conditionalMean_integral_eq_gaussianMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.gaussianLossLaw_eq_haarProjector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanDiscrepancy_bddAbove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.specialOrientationLaw_map_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.rotateProjector_specialOrientation_identDistrib' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.stabilizerComplement_frobenius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.stabilizerComplement_weighted_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.variance_le_of_cgf_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.variance_finite_rotation_of_brascampLieb' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.variance_sketch_average_le_empirical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.integral_empiricalProjectorNorm_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.variance_rotation_of_brascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.lemma_3_1_of_brascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.gaussianTailMomentConstant_eq_integrals' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.gaussianTailMomentConstant_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.lemma_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.l1_mean_le_of_truncated_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.paper_cutoff_bound_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanDiscrepancy_rate_of_brascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanDiscrepancy_rootRate_of_brascampLieb' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.growingWidth_meanDiscrepancy_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spike_tailRelativeError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spike_optimalTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeConditionalAverage_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeScalarCovariance_eq_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeScalarCovariance_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeLimitGap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeDirectionalTest_square_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeSpectrum_discrepancy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.spikeDeviation_le_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanDiscrepancy_eventually_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanProjectorNorm_tendsto_zero_of_discrepancy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.criterion_of_brascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanSketchProjector_orthogonalRows_joint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.meanSketchProjector_of_fullRankColumnSpace_symmetry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.isotropic_meanDiscrepancy_rate_of_brascampLieb' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.commonMean_of_individual_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.commonMean_of_brascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SketchOrientation.mean_independentProjector_overlap_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SketchOrientation.squaredResidual_gram_pseudoInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SketchOrientation.pairedDraw_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.theorem_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.lemma_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.corollary_4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.corollary_4_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.corollary_4_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.paper_explicit_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.paper_root_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.orientationGap_probability_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.rotationBrascampLieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.projector_weighted_energy_iff_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.rotationBrascampLieb_mixedRanks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.gaussian_tailRelativeMean_sup_eq_worstCase' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.gaussianMean_equalSpike_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.twoPassDct_figureNotes_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SketchOrientation.proposition_C_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanProjectorNorm_mem_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.measurable_rangeProjector_of_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanRangeProjector_eq_expected_rank_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.fullRank_conditioned_preserves_column_space_symmetry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.equalSpike_meanResidual_ge_rankDeficiency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.rankDeficiency_meanDiscrepancy_unbounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.paper_growingWidth_meanDiscrepancy_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.conditionalMean_standardDeviation_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.conditionalMean_standardDeviation_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.blockMixture_meanProjectorNorm_and_conditionalMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.replicate_covariance_eq_conditionalMean_variance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.intro_coordinateSpike_identity_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.intro_coordinateSpike_gaussianMean_le_worstCase' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.intro_coordinateSpike_divergence_and_Haar_agreement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.coordinateSubsetProjectorLaw_meanNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.uniformPrefixCoordinateSketch_outside_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.uniformPrefixCoordinateSketch_sqrt_regime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.scaledCoordinateSpikeReadout_law_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.scaledCoordinateSpikeReadout_tendstoInDistribution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.coordinateSpike_fixedConditional_tendstoInDistribution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.coordinateSpike_limit_no_atoms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.coordinateSpike_gaussianMean_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.coordinateSpike_uniformConditional_tendsto_L1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalshCoefficient_inner_squares' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalshCoefficient_inner_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalshCoefficient_lindeberg_tail_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalshScaledProjection_fixedRows_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalshScaledProjection_uniformRows_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalshRareEvent_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalshRareEvent_miss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalshRelativeMean_rareMiss_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_exponential_lower_isEquivalent_dim' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalshRelativeMean_exponential_tendsto_atTop' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.signedPermBlockLaw_eq_actualProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.walsh_firstColumns_miss_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.walsh_firstColumns_miss_cost_littleO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.walsh_miss_cost_realizes_regimes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.rotationBrascampLieb_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.rotationBrascampLieb_of_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.rotationEval_polynomialOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.heatValue_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.heatValue_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.heatValue_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.heatValue_translation_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.weightedHeatIntegral_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.weightedHeatIntegral_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_uniform_row_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_conditional_projector_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_meanSketchProjector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_conditionalMean_eq_draw_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.flatWalsh_gap_gaussianMean_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.flatWalsh_gap_Haar_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.fullRankSketchLaw_gaussian_eq_haarSketchProjector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.conditionalMean_gaussianSketch_eq_gaussianMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TypicalOrientations.meanDiscrepancy_gaussianSketch_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TypicalOrientations.meanProjectorNorm_gaussianSketch' depends on axioms: [propext, Classical.choice, Quot.sound]
